@@ -1,0 +1,101 @@
+
+/* *========> IF Mode Checked >> Implement This Function To Change From Light To Dark Mode <======== */
+
+:root:has(.mode:checked) {
+    --primary-hue: 35;
+    --primary-lightness: 44%;
+    --primary-saturation: 72%;
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 9%;
+    --color-default: #fff;
+    --color-secondary: #fff;
+    --color-tertiary: #9f9f9f;
+    --color-light-grey: #252525;
+}
+  
+:root:has(.mode:checked) body {
+  background-color: #202020;
+}
+
+:root:has(.mode:checked) .mode-group .dark {
+  display: none;
+}
+
+:root:has(.mode:checked) .mode-group .light {
+  display: block;
+}
+
+:root:has(.mode:checked) nav .menu-icon i {
+  color: white;
+}
+
+body:has(.mode:checked) nav h1 a:hover {
+    color: #fff;
+}
+
+body:has(.mode:checked) nav h1 a {
+    color: #fff;
+}
+
+body:has(.mode:checked) header .btn-main {
+    color: black;
+}
+
+body:has(.mode:checked) header .video-btn {
+    color: #fff;
+}
+
+body:has(.mode:checked) header .video-btn i {
+    color: #fff;
+}
+
+body:has(.mode:checked) header .video-btn:hover {
+    color: hsl( var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.7 );
+}
+
+body:has(.mode:checked) header .video-btn i:hover {
+    color: hsl( var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.7 );
+}
+
+body:has(.mode:checked) .contact .container button:hover{
+  background-color: hsl( var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.7 );
+  color: white;
+  cursor: pointer;
+}
+
+body:has(.mode:checked) .header-content p {
+    color: var(--color-tertiary);
+}
+  
+:root:has(.mode:checked) .chefs .cards .card .picture::before {
+    background-image: url("../images/team-shape-dark.svg");
+}
+  
+body:has(.mode:checked) .contact .details > div h3 {
+    color: #adadad;
+}
+
+body:has(.mode:checked) nav li a:hover {
+    color: black;
+}
+
+body:has(.mode:checked) .chefs .card .card-content {
+  background-color: #181717;
+}
+
+body:not(body:has(:target)):has(.mode-group input:checked) li a[href="#home"],
+body:has(.home:target):has(.mode-group input:checked) li a[href="#home"],
+body:has(.contact:target):has(.mode-group input:checked) li a[href="#contact"],
+body:has(.gallery:target):has(.mode-group input:checked) li a[href="#gallery"],
+body:has(.chefs:target):has(.mode-group input:checked) li a[href="#chefs"] {
+  color: white;
+}
+
+body:not(body:has(:target)) li a[href="#home"]::before,
+body:has(.home:target) li a[href="#home"]::before,
+body:has(.contact:target) li a[href="#contact"]::before,
+body:has(.gallery:target) li a[href="#gallery"]::before,
+body:has(.chefs:target) li a[href="#chefs"]::before {
+  width: 100%;
+}
